@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/mainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_15_dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonThread"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="calculate"
+                android:textSize="@dimen/feels_like_text_size" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextThread"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="2"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+                android:text="1"
+                android:textSize="@dimen/feels_like_text_size" />
+
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/thread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Thread"
+            android:textSize="@dimen/feels_like_text_size" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/handler_thread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="HandlerThread"
+            android:textSize="@dimen/feels_like_text_size" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="service"
+            android:textSize="@dimen/feels_like_text_size" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/broadcastReceiver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="service + broadcastReceiver"
+            android:textSize="@dimen/feels_like_text_size" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center"
+            android:id="@+id/textViewThread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="0"
+            android:textSize="150sp" />
+    </LinearLayout>
+</ScrollView>

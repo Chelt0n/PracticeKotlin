@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.example.practicekotlin.R
 import com.example.practicekotlin.databinding.ListOfCitiesFragmentBinding
+import com.example.practicekotlin.details.DetailsWeatherFragment
 import com.example.practicekotlin.domain.Weather
 import com.example.practicekotlin.viewmodel.AppState
 import com.example.practicekotlin.viewmodel.MainViewModel
@@ -82,7 +83,7 @@ class ListOfCitiesFragment : Fragment(),OnClickWeather {
         val bundle = Bundle()
         bundle.putParcelable(DetailsWeatherFragment.WEATHER_KEY,weather)
         requireActivity().supportFragmentManager
-            .beginTransaction().add(R.id.container, DetailsWeatherFragment.newInstance(bundle)).addToBackStack("")
+            .beginTransaction().replace(R.id.container, DetailsWeatherFragment.newInstance(bundle)).addToBackStack("")
             .commit()
     }
 

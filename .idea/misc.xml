@@ -7,11 +7,17 @@
         <entry key="..\:/AndroidStudioProjects/PracticeKotlin/app/src/main/res/drawable/ic_russia.xml" value="0.28888888888888886" />
         <entry key="..\:/AndroidStudioProjects/PracticeKotlin/app/src/main/res/drawable/spinner_ring.xml" value="0.28888888888888886" />
         <entry key="..\:/AndroidStudioProjects/PracticeKotlin/app/src/main/res/layout/activity_main.xml" value="0.36041666666666666" />
+        <entry key="..\:/AndroidStudioProjects/PracticeKotlin/app/src/main/res/layout/activity_main_web_view.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/PracticeKotlin/app/src/main/res/layout/activity_test.xml" value="0.19739583333333333" />
         <entry key="..\:/AndroidStudioProjects/PracticeKotlin/app/src/main/res/layout/blank_fragment.xml" value="0.36041666666666666" />
         <entry key="..\:/AndroidStudioProjects/PracticeKotlin/app/src/main/res/layout/details_fragment.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/PracticeKotlin/app/src/main/res/layout/list_of_cities_fragment.xml" value="0.20104166666666667" />
         <entry key="..\:/AndroidStudioProjects/PracticeKotlin/app/src/main/res/layout/main_fragment.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/PracticeKotlin/app/src/main/res/layout/main_fragment_recycler_view.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/PracticeKotlin/app/src/main/res/layout/test_lesson_six.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/PracticeKotlin/app/src/main/res/layout/test_list.xml" value="0.19739583333333333" />
+        <entry key="..\:/AndroidStudioProjects/PracticeKotlin/app/src/main/res/menu/test_lesson_six_menu.xml" value="0.16197916666666667" />
+        <entry key="..\:/AndroidStudioProjects/PracticeKotlin/app/src/main/res/menu/text_lesson_six_menu.xml" value="0.36041666666666666" />
       </map>
     </option>
   </component>

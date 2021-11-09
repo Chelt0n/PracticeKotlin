@@ -8,10 +8,10 @@ data class Weather(
     val city: City = defCity(),
     val temperature: Int = -1,
     val feelsLike: Int = -5
-):Parcelable
+) : Parcelable
 
 private fun defCity() = City("Москва", 55.0, 37.0)
- fun getWorldCities(): List<Weather> {
+fun getWorldCities(): List<Weather> {
     return listOf(
         Weather(City("Лондон", 51.5085300, -0.1257400), 1, 2),
         Weather(City("Токио", 35.6895000, 139.6917100), 3, 4),
@@ -26,7 +26,7 @@ private fun defCity() = City("Москва", 55.0, 37.0)
     )
 }
 
- fun getRussianCities(): List<Weather> {
+fun getRussianCities(): List<Weather> {
     return listOf(
         Weather(City("Москва", 55.755826, 37.617299900000035), 1, 2),
         Weather(City("Санкт-Петербург", 59.9342802, 30.335098600000038), 3, 3),
@@ -37,6 +37,7 @@ private fun defCity() = City("Москва", 55.0, 37.0)
         Weather(City("Челябинск", 55.1644419, 61.4368432), 13, 14),
         Weather(City("Омск", 54.9884804, 73.32423610000001), 15, 16),
         Weather(City("Ростов-на-Дону", 47.2357137, 39.701505), 17, 18),
-        Weather(City("Уфа", 54.7387621, 55.972055400000045), 19, 20)
+        Weather(City("Уфа", 54.7387621, 55.972055400000045), 19, 20),
+        Weather(City("Волжский", 48.786293, 44.751867), 19, 20)
     )
 }
