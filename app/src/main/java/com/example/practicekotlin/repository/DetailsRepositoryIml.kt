@@ -1,10 +1,11 @@
 package com.example.practicekotlin.repository
 
-import okhttp3.Callback
+import retrofit2.Callback
 
-class DetailsRepositoryIml(private val remoteDataSource: RemoteDataSource):DetailsRepository {
-    override fun getWeatherDetailsFromServer(requestLink: String, callback: Callback) {
-        remoteDataSource.getWeatherDetails(requestLink,callback)
+
+class DetailsRepositoryIml(private val remoteDataSource: RemoteDataSource) : DetailsRepository {
+    override fun getWeatherDetailsFromServer(lat: Double, lon: Double, callback: Callback<WeatherDTO>) {
+        remoteDataSource.getWeatherDetails(lat, lon, callback)
 
     }
 }

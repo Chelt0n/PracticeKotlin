@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.practicekotlin.databinding.DetailsFragmentBinding
 import com.example.practicekotlin.domain.Weather
-import com.example.practicekotlin.utils.API_URL
 import com.example.practicekotlin.viewmodel.AppState
 import com.example.practicekotlin.viewmodel.DetailsViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -40,8 +39,7 @@ class DetailsWeatherFragment : Fragment() {
         viewModel.getLiveData().observe(viewLifecycleOwner, {
             render(it)
         })
-        val coordinates = "lat=${localWeather.city.lat}&lon${localWeather.city.lon}"
-        viewModel.getWeatherFromRemoteSource(API_URL + coordinates)
+        viewModel.getWeatherFromRemoteSource(localWeather.city.lat, localWeather.city.lon)
 
 
     }

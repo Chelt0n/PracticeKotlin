@@ -1,9 +1,9 @@
 package com.example.practicekotlin.repository
 
-import okhttp3.Callback
+import retrofit2.Callback
 
 
 interface DetailsRepository {
-    fun getWeatherDetailsFromServer(requestLink: String, callback: Callback)
+    fun getWeatherDetailsFromServer(lat:Double, lon:Double, callback: Callback<WeatherDTO>)
 
 }

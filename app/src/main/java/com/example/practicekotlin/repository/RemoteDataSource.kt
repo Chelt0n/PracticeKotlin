@@ -1,21 +1,24 @@
 package com.example.practicekotlin.repository
 
+
 import com.example.practicekotlin.BuildConfig
-import com.example.practicekotlin.utils.API_KEY_NAME
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.OkHttpClient
-import okhttp3.Request
+import com.example.practicekotlin.utils.API_BASE_URL
+
+import com.google.gson.GsonBuilder
+import retrofit2.Callback
+
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 class RemoteDataSource {
-    fun getWeatherDetails(requestLink:String, callback: Callback){
-        val client = OkHttpClient()
-        val builder: Request.Builder = Request.Builder()
-        builder.header(API_KEY_NAME, BuildConfig.WEATHER_API_KEY)
-        builder.url(requestLink)
-        val request: Request = builder.build()
-        val call: Call = client.newCall(request)
-        call.enqueue(callback)
+    private val weatherApi by lazy {
+        Retrofit.Builder().baseUrl(API_BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
+            .build().create(WeatherApi::class.java)
+    }
+
+    fun getWeatherDetails(lat: Double, lon: Double, callback: Callback<WeatherDTO>) {
+        weatherApi.getWeather(BuildConfig.WEATHER_API_KEY, lat, lon).enqueue(callback)
     }
 }

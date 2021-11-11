@@ -7,10 +7,9 @@ import com.example.practicekotlin.repository.RemoteDataSource
 import com.example.practicekotlin.repository.WeatherDTO
 import com.example.practicekotlin.utils.convertDtoToModel
 import com.google.gson.Gson
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.Response
-import java.io.IOException
+
+import retrofit2.Callback
+
 
 class DetailsViewModel(
     private val detailsLiveData: MutableLiveData<AppState> = MutableLiveData(),
@@ -18,22 +17,28 @@ class DetailsViewModel(
 ) : ViewModel() {
 
     fun getLiveData() = detailsLiveData
-    fun getWeatherFromRemoteSource(requestLink: String) {
+    fun getWeatherFromRemoteSource(lat: Double, lon: Double) {
         detailsLiveData.value = AppState.Loading
-        detailsRepositoryIml.getWeatherDetailsFromServer(requestLink, callback)
+        detailsRepositoryIml.getWeatherDetailsFromServer(lat, lon, callback)
     }
 
-    private val callback = object : Callback {
-        override fun onFailure(call: Call, e: IOException) {
+    private val callback = object : Callback<WeatherDTO> {
+        override fun onFailure(call: retrofit2.Call<WeatherDTO>, t: Throwable) {
             detailsLiveData.postValue(AppState.Error("Ошибка запроса"))
         }
-        override fun onResponse(call: Call, response: Response) {
-            val serverResponse: String? = response.body?.string()
-            if (response.isSuccessful && serverResponse != null) {
-                val weatherDTO = Gson().fromJson(serverResponse, WeatherDTO::class.java)
-                detailsLiveData.postValue(AppState.Success(convertDtoToModel(weatherDTO)))
+
+        override fun onResponse(
+            call: retrofit2.Call<WeatherDTO>,
+            response: retrofit2.Response<WeatherDTO>
+        ) {
+
+            if (response.isSuccessful && response.body() != null) {
+                val weatherDTO = response.body()
+                weatherDTO?.let {
+                    detailsLiveData.postValue(AppState.Success(convertDtoToModel(weatherDTO)))
+                }
+
             }
         }
     }
-
 }
