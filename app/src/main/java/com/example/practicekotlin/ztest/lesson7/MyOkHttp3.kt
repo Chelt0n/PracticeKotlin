@@ -1,12 +1,5 @@
 package com.example.practicekotlin.ztest.lesson7
 
-import android.os.Handler
-import android.os.Looper
-import com.example.practicekotlin.repository.WeatherDTO
-import com.google.gson.Gson
-import okhttp3.*
-import java.io.IOException
-
 class MyOkHttp3 {
     /*
     private val client = OkHttpClient()

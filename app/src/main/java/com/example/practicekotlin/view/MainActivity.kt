@@ -1,18 +1,12 @@
 package com.example.practicekotlin.view
 
-import android.content.BroadcastReceiver
-import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import androidx.appcompat.app.AppCompatActivity
 import com.example.practicekotlin.R
-import com.example.practicekotlin.ztest.lesson4.Test
 import com.example.practicekotlin.ztest.lesson6.MyBroadcastReceiver
 import com.example.practicekotlin.ztest.lesson6.ThreadsFragment
 

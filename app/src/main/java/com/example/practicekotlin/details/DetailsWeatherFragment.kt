@@ -2,20 +2,17 @@ package com.example.practicekotlin.details
 
 
 import android.os.Bundle
-
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.practicekotlin.databinding.DetailsFragmentBinding
 import com.example.practicekotlin.domain.Weather
-import com.example.practicekotlin.repository.WeatherDTO
 import com.example.practicekotlin.utils.API_URL
 import com.example.practicekotlin.viewmodel.AppState
 import com.example.practicekotlin.viewmodel.DetailsViewModel
 import com.google.android.material.snackbar.Snackbar
-import okhttp3.*
 
 class DetailsWeatherFragment : Fragment() {
 
@@ -35,7 +32,7 @@ class DetailsWeatherFragment : Fragment() {
     }
 
     private val localWeather: Weather by lazy {
-        (arguments?.getParcelable<Weather>(WEATHER_KEY)) ?: Weather()
+        (arguments?.getParcelable(WEATHER_KEY)) ?: Weather()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -65,8 +62,8 @@ class DetailsWeatherFragment : Fragment() {
             is AppState.Error -> {
                 binding.loadingLayout.visibility = View.INVISIBLE
                 binding.mainView.visibility = View.VISIBLE
-                val throwable = appState.error
-                Snackbar.make(binding.root, "Ошибка+${throwable}", Snackbar.LENGTH_LONG).show()
+                val error = appState.error
+                Snackbar.make(binding.root, error, Snackbar.LENGTH_LONG).show()
             }
         }
 

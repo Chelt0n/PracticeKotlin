@@ -25,8 +25,8 @@ class DetailsViewModel(
 
     private val callback = object : Callback {
         override fun onFailure(call: Call, e: IOException) {
+            detailsLiveData.postValue(AppState.Error("Ошибка запроса"))
         }
-
         override fun onResponse(call: Call, response: Response) {
             val serverResponse: String? = response.body?.string()
             if (response.isSuccessful && serverResponse != null) {

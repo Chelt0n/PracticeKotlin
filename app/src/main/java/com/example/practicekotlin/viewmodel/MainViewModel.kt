@@ -1,7 +1,5 @@
 package com.example.practicekotlin.viewmodel
 
-import android.os.SystemClock.sleep
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.practicekotlin.repository.RepositoryImpl

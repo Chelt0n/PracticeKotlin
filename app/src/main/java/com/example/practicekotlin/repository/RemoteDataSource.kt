@@ -1,14 +1,11 @@
 package com.example.practicekotlin.repository
 
-import android.os.Handler
-import android.os.Looper
 import com.example.practicekotlin.BuildConfig
-import com.example.practicekotlin.details.DetailsWeatherFragment
 import com.example.practicekotlin.utils.API_KEY_NAME
-import com.example.practicekotlin.utils.API_URL
-import com.google.gson.Gson
-import okhttp3.*
-import java.io.IOException
+import okhttp3.Call
+import okhttp3.Callback
+import okhttp3.OkHttpClient
+import okhttp3.Request
 
 
 class RemoteDataSource {

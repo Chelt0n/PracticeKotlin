@@ -1,7 +1,7 @@
 package com.example.practicekotlin.ztest.lesson3
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.practicekotlin.databinding.TestLessonThreeBinding
 import com.example.practicekotlin.domain.getRussianCities
 

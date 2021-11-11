@@ -11,7 +11,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.practicekotlin.databinding.TestLessonSixBinding
 import java.util.*
-import kotlin.time.minutes
 
 class ThreadsFragment : Fragment() {
 
