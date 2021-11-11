@@ -51,7 +51,7 @@ class ListOfCitiesFragment : Fragment(),OnClickWeather {
 
 
 
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
         viewModel.getLiveData().observe(viewLifecycleOwner, Observer<AppState> {
             render(it)
         })

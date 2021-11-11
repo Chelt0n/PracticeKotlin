@@ -19,23 +19,6 @@ class RemoteDataSource {
         builder.url(requestLink)
         val request: Request = builder.build()
         val call: Call = client.newCall(request)
-        //=======================Асинхронный запрос==================================
-        call.enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-            }
-
-            override fun onResponse(call: Call, response: Response) {
-                val serverResponse: String? = response.body?.string()
-                if (response.isSuccessful && serverResponse != null) {
-                    val weatherDTO =
-                        Gson().fromJson<WeatherDTO>(serverResponse, WeatherDTO::class.java)
-                    val handler = Handler(Looper.getMainLooper())
-                    handler.post {
-                        DetailsWeatherFragment().fillInAllFields(weatherDTO)
-                    }
-                }
-            }
-
-        })
+        call.enqueue(callback)
     }
 }

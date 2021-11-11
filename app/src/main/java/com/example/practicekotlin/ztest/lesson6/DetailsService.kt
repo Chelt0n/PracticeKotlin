@@ -1,4 +1,4 @@
-package com.example.practicekotlin.details
+package com.example.practicekotlin.ztest.lesson6
 
 import android.app.IntentService
 import android.content.Intent
@@ -49,5 +49,6 @@ class DetailsService(name:String = "details"):IntentService(name) {
 
             urlConnection.disconnect()
         }.start()
+
     }
 }

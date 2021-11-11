@@ -31,7 +31,7 @@ class DetailsViewModel(
             val serverResponse: String? = response.body?.string()
             if (response.isSuccessful && serverResponse != null) {
                 val weatherDTO = Gson().fromJson(serverResponse, WeatherDTO::class.java)
-                detailsLiveData.value = AppState.Success(convertDtoToModel(weatherDTO))
+                detailsLiveData.postValue(AppState.Success(convertDtoToModel(weatherDTO)))
             }
         }
     }
