@@ -7,11 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import coil.load
+import com.bumptech.glide.Glide
 import com.example.practicekotlin.databinding.DetailsFragmentBinding
 import com.example.practicekotlin.domain.Weather
 import com.example.practicekotlin.viewmodel.AppState
 import com.example.practicekotlin.viewmodel.DetailsViewModel
 import com.google.android.material.snackbar.Snackbar
+import com.squareup.picasso.Picasso
 
 class DetailsWeatherFragment : Fragment() {
 
@@ -74,6 +77,9 @@ class DetailsWeatherFragment : Fragment() {
             temperatureValue.text = weather.temperature.toString()
             feelsLikeValue.text = weather.feelsLike.toString()
             weatherCondition.text = weather.condition
+            //coil
+            imageView.load("https://freepngimg.com/thumb/city/36275-3-city-hd.png")
+
         }
 
     }
@@ -87,5 +93,4 @@ class DetailsWeatherFragment : Fragment() {
 
         const val WEATHER_KEY = "KEY"
     }
-
 }
