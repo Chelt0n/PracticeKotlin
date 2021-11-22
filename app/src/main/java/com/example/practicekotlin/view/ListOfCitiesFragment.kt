@@ -62,7 +62,7 @@ class ListOfCitiesFragment : Fragment(),OnClickWeather {
         when(appState){
             AppState.Loading -> {
                 binding.mainFragmentLoadingLayout.visibility = View.VISIBLE }
-            is AppState.Success -> {
+            is AppState.SuccessMain -> {
                 binding.mainFragmentLoadingLayout.visibility = View.GONE
                 adapter.setWeather(appState.weatherData)
 

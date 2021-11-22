@@ -2,6 +2,7 @@ package com.example.practicekotlin.details
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,6 +46,7 @@ class DetailsWeatherFragment : Fragment() {
         viewModel.getWeatherFromRemoteSource(localWeather.city.lat, localWeather.city.lon)
 
 
+
     }
 
     private fun render(appState: AppState) {
@@ -52,12 +54,15 @@ class DetailsWeatherFragment : Fragment() {
             AppState.Loading -> {
                 binding.loadingLayout.visibility = View.VISIBLE
                 binding.mainView.visibility = View.GONE
+                Log.d("MyLog","Loading")
             }
-            is AppState.Success -> {
+            is AppState.SuccessDetails -> {
+                Snackbar.make(binding.root, "success", Snackbar.LENGTH_LONG).show()
                 binding.loadingLayout.visibility = View.INVISIBLE
                 binding.mainView.visibility = View.VISIBLE
                 val weather = appState.weatherData
-                fillInAllFields(weather[0])
+                fillInAllFields(weather)
+                Log.d("MyLog","SuccessDetails")
             }
 
             is AppState.Error -> {
@@ -65,6 +70,7 @@ class DetailsWeatherFragment : Fragment() {
                 binding.mainView.visibility = View.VISIBLE
                 val error = appState.error
                 Snackbar.make(binding.root, error, Snackbar.LENGTH_LONG).show()
+                Log.d("MyLog","Error")
             }
         }
 
@@ -72,6 +78,9 @@ class DetailsWeatherFragment : Fragment() {
 
 
     private fun fillInAllFields(weather: Weather) {
+        val savedWeather = Weather(localWeather.city,weather.temperature,weather.feelsLike,weather.condition)
+        viewModel.saveWeather(savedWeather)
+
         with(binding) {
             cityName.text = localWeather.city.name
             temperatureValue.text = weather.temperature.toString()

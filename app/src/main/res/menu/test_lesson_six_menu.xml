@@ -6,4 +6,8 @@
         android:id="@+id/action_open_fragment_threads"
         android:title="Threads"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/action_open_fragment_history"
+        android:title="History"
+        app:showAsAction="always" />
 </menu>

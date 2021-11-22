@@ -18,9 +18,9 @@ class MainViewModel(
     fun getDataFromLocalSource(isRussian: Boolean) {
         liveData.postValue(AppState.Loading)
         if (isRussian) {
-            liveData.postValue(AppState.Success(repository.getRusCitiesFromLocalSource()))
+            liveData.postValue(AppState.SuccessMain(repository.getRusCitiesFromLocalSource()))
         } else {
-            liveData.postValue(AppState.Success(repository.getWorldCitiesFromLocalSource()))
+            liveData.postValue(AppState.SuccessMain(repository.getWorldCitiesFromLocalSource()))
         }
 
     }

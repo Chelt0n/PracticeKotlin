@@ -45,11 +45,6 @@ class ListOfCitiesFragmentAdapter :
                 weather.city.name
             itemView.setOnClickListener {
                 listener.onClick(weather)
-                Toast.makeText(
-                    itemView.context,
-                    "работает",
-                    Toast.LENGTH_SHORT
-                ).show()
             }
         }
 

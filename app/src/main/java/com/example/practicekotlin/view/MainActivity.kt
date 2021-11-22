@@ -7,8 +7,10 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.example.practicekotlin.R
+import com.example.practicekotlin.history.HistoryListOfCitiesFragment
 import com.example.practicekotlin.ztest.lesson6.MyBroadcastReceiver
 import com.example.practicekotlin.ztest.lesson6.ThreadsFragment
+import com.example.practicekotlin.ztest.lesson8.MyApp.Companion.getHistoryDAO
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,7 +25,6 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager
                 .beginTransaction().add(R.id.container, ListOfCitiesFragment.newInstance())
                 .commit()
-
         registerReceiver(receiver, IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED))
     }
 
@@ -38,6 +39,13 @@ class MainActivity : AppCompatActivity() {
             R.id.action_open_fragment_threads -> {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.container, ThreadsFragment.newInstance()).commit()
+                true
+            }
+            R.id.action_open_fragment_history -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, HistoryListOfCitiesFragment.newInstance())
+                    .addToBackStack("")
+                    .commit()
                 true
             }
             else -> super.onOptionsItemSelected(item)
