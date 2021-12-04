@@ -3,6 +3,7 @@
     package="com.example.practicekotlin">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:name=".ztest.lesson8.MyApp"

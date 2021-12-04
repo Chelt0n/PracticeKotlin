@@ -5,9 +5,13 @@
     <item
         android:id="@+id/action_open_fragment_threads"
         android:title="Threads"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
     <item
         android:id="@+id/action_open_fragment_history"
         android:title="History"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_open_fragment_content_provider"
+        android:title="Provider"
+        app:showAsAction="never" />
 </menu>

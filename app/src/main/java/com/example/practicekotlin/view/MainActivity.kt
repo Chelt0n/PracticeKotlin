@@ -10,7 +10,7 @@ import com.example.practicekotlin.R
 import com.example.practicekotlin.history.HistoryListOfCitiesFragment
 import com.example.practicekotlin.ztest.lesson6.MyBroadcastReceiver
 import com.example.practicekotlin.ztest.lesson6.ThreadsFragment
-import com.example.practicekotlin.ztest.lesson8.MyApp.Companion.getHistoryDAO
+import com.example.practicekotlin.ztest.lesson9.ContentProviderFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,6 +44,13 @@ class MainActivity : AppCompatActivity() {
             R.id.action_open_fragment_history -> {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.container, HistoryListOfCitiesFragment.newInstance())
+                    .addToBackStack("")
+                    .commit()
+                true
+            }
+            R.id.action_open_fragment_content_provider -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, ContentProviderFragment.newInstance())
                     .addToBackStack("")
                     .commit()
                 true
